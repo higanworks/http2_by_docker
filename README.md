@@ -6,18 +6,13 @@
 
 ```
 $ sudo docker build -t local/h2o .
-$ sudo docker run --rm -p 443:8080 -v `pwd`/conf:/conf local/h2o /conf/h2o.conf
+$ sudo docker run -t --rm -p 443:8080 -v `pwd`/conf:/conf local/h2o /conf/h2o.conf
 ```
 
 ### trusterd
 
 ```
 $ sudo docker build -t local/trusterd .
-$ sudo docker run --rm -p 443:8080 -v `pwd`/conf:/conf -t local/trusterd /conf/trusterd.conf
+$ sudo docker run -t --rm -p 443:8080 -v `pwd`/conf:/conf -t local/trusterd /conf/trusterd.conf
 ```
 
-## stop
-
-```
-$ sudo docker ps -q | xargs sudo docker stop
-```
